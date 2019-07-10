@@ -1,0 +1,11 @@
+.THIS.block {
+    width : 200px;
+    height : 100px;
+    border : 2px solid blue;
+    color : green;
+    margin-left : 200px;
+    margin-top : 100px;
+    padding-left : 30px;
+    padding-top : 30px;
+    
+}

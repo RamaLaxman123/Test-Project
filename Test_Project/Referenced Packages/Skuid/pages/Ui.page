@@ -1,0 +1,53 @@
+<apex:page controller="skuid.Ui" readonly="true" standardStylesheets="false" extensions="skuid.RemotingStubs" sidebar="{!showSidebar}" showHeader="{!showHeader}" 
+	docType="html-5.0" cache="{!cachePage}" expires="{!cacheExpiration}">
+	
+    <apex:outputPanel rendered="{!useLegacyRendering}" layout="none">
+        <!-- Legacy v1 page renderer -->
+        <!--  Load in standard Skuid page resources -->
+        <c:contentHeader pageType="{!pageType}" pageTheme="{!pageThemeUrl}" loadCoreResources="{!loadCoreResources}" loadMobileResources="{!loadMobileResources}" loadDesktopResources="{!loadDesktopResources}"/>
+        <!-- Load in external CSS files using link tags -->
+        <apex:outputText value="{!cssLoads}" escape="false" />
+        <!-- Load local/page/inline CSS -->
+        <style>{!css}</style>
+        <!-- Build the HTML DOM of our page -->
+        <apex:outputText value="{!html}" escape="false" />
+        <!-- Load in Skuid module JS -->
+        <c:scripts pageType="{!pageType}" pageTheme="{!pageThemeUrl}" loadCoreResources="{!loadCoreResources}" loadMobileResources="{!loadMobileResources}" loadDesktopResources="{!loadDesktopResources}" />
+        <!-- Load in external JS files using script tags with src attribute -->
+        <apex:outputText value="{!jsLoads}" escape="false" />
+        <!-- Load in inline JS -->
+        <script><apex:outputText value="{!js}"/></script>
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!!useLegacyRendering}" layout="none">
+        <!-- v2 page renderer -->
+        <script>
+            if (!window.skuid) window.skuid = {};
+        </script>
+        <script src="{!$Resource.skuid__SharedRuntimeJS}"></script>
+        <div id="skuid-page-temp"></div>
+        <script>
+            var wrapper = document.getElementById('skuid-page-temp'),
+                wrapperId = wrapper.id = skuid.runtime.generateUniquePageId();
+            /* global skuid */
+            skuid.runtime.start({
+                platform: {
+                    environment: "production",
+                    sitePrefix: "{!$Site.Prefix}",
+                    skuidVersionedResources: {!skuidVersionedResources},
+                    platformName: "visualforce",
+                },
+                initialPage: {
+                    pageId: "{!pageId}",
+                    pageName: "{!pageName}",
+                    serviceModstamps: {!serviceModstamps},
+                    wrapper: wrapper,
+                },
+            }).catch(err => {
+                // Break out of the Promise chain and rethrow the error in the console
+                window.setTimeout(() => {throw err;}, 0);
+            });
+        </script>
+    </apex:outputPanel>
+    
+</apex:page>

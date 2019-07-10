@@ -1,0 +1,7 @@
+<aura:component >
+	<div>
+        Name : laxman <br/><br/>
+        Age : 28 <br/><br/>
+        Phone : 9885488510 <br/>
+    </div>	
+</aura:component>

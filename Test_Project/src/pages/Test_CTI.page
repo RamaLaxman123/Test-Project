@@ -1,0 +1,13 @@
+<apex:page standardController="Account" extensions="Account_CTI_Controller">
+    <apex:form >
+    <apex:pageBlock title="Hello {!$User.FirstName}!">
+       <apex:pageBlockSection >
+        	<apex:outputField value="{!accoutobj.Id}"/>
+            <apex:outputField value="{!accoutobj.Phone}"/>
+            <apex:outputField value="{!accoutobj.Name}"/>
+            <apex:outputField value="{!accoutobj.OwnerId}"/>
+            <apex:outputField value="{!accoutobj.Owner.Name}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>

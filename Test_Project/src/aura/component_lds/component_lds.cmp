@@ -1,0 +1,28 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="sampleRec" type="Object" />
+    <aura:attribute name="error" type="String" />
+	<force:recordData aura:id="data" recordId="{!v.recordId}" layoutType="FULL" mode="EDIT"
+                      targetRecord="{!v.record}" targetFields="{!v.sampleRec}" targetError="{!v.error}" />
+    <div class="Record Details">
+    	<lightning:card iconName="standard:Lead" title="{!v.sampleRec.Name}">
+        	<div class="something test">
+            	<p class="slds-test-heading">
+                    <lightning:input label="Name" value="{!v.sampleRec.Name}"/>
+                </p>
+                <p class="slds-test-heading">
+                    <lightning:input label="Phone" value="{!v.sampleRec.Phone}"/>
+                </p>
+                <p class="slds-test-heading">
+                    <lightning:input label="Email" value="{!v.sampleRec.Email}"/>
+                </p>
+            </div>
+        </lightning:card>
+    </div>
+    <aura:if isTrue="{!not(empty(v.error))}">
+    	<div class="RecordError">
+        	{!v.error}
+        </div>
+    </aura:if>
+</aura:component>

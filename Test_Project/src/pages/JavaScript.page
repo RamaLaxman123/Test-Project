@@ -1,0 +1,16 @@
+<apex:page >
+    <html>
+      <body>
+        <h2>
+            My First Script
+          </h2>
+          <button type="Button" onclick="document.getElementById('demo').innerHTML= Date()">
+              click on Button
+          </button>
+          <p id="demo">
+              
+          </p>
+    </body>  
+    </html>
+    
+</apex:page>

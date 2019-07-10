@@ -1,0 +1,5 @@
+<aura:component controller="Helloworldclass">
+    <aura:attribute name="message" type="String"/>
+    {!v.message}
+    <lightning:button label="Save" onclick="{!c.saveFun}"/>
+</aura:component>

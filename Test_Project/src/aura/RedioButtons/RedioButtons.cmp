@@ -1,0 +1,8 @@
+<aura:component >
+ <ui:inputRadio text="Sample1" label="Sample 1" name="Role" change="{!c.onGroup}"/><br/>
+    <ui:inputRadio text="Sample2" label="Sample 2" name="Role" change="{!c.onGroup}"/><br/>
+    <ui:inputRadio text="Sample3" label="Sample 3" name="Role" change="{!c.onGroup}"/><br/>
+    <ui:inputRadio text="Sample4" label="Sample 4" name="Role" change="{!c.onGroup}"/><br/>
+    <ui:inputRadio text="Sample5" label="Sample 5" name="Role" change="{!c.onGroup}"/>
+
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component >
+    <c:ComponentChild/>
+    <aura:handler name="firstEvent" event="c:FirstEvent" action="{!c.show}"/>
+    <aura:attribute name="res" type="String"/>
+    {!v.res}
+    <!--<c:ComponentChildOne/>-->
+</aura:component>

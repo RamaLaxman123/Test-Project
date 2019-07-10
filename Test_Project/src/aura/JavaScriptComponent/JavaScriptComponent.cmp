@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable" >  
+      
+    <aura:attribute name="strText" type="String"/>  
+      
+   <div class="slds-box slds-theme_default">  
+  
+       <span onkeypress="{!c.callKeyUp}">  
+             
+           <lightning:input label="Enter Text"  
+                            value="{!v.strText}" />  
+             
+       </span>  
+          
+    </div>  
+      
+</aura:component>

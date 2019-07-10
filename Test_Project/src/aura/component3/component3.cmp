@@ -1,0 +1,5 @@
+<aura:component >
+	<c:component1></c:component1>
+    <c:component2></c:component2>
+    Print All Data
+</aura:component>

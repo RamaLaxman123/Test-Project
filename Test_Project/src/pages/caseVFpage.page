@@ -1,0 +1,17 @@
+<apex:page controller="CaseController">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!caseobj.Subject}"/>
+                <apex:inputField value="{!caseobj.Description}"/>
+                <apex:inputField value="{!caseobj.ContactId}"/>
+                <apex:inputField value="{!caseobj.Contact.Phone}"/>
+                <apex:inputField value="{!caseobj.Contact.Email}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!saveCase}"/>
+                <apex:commandButton value="Send Email" action="{!sendEmail}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

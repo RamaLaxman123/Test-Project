@@ -1,0 +1,20 @@
+<apex:page controller="RESTAPIJSONResponseController">
+    <apex:form >
+        <apex:pageBlock >            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Fetch" action="{!fetchAPI}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        <apex:pageblock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!listWrapper}" var="obj">
+                    <apex:column value="{!obj.id}" headerValue="Id"/>
+                    <apex:column value="{!obj.login}" headerValue="Login"/>
+                    <apex:column value="{!obj.url}" headerValue="URL"/>
+                    <apex:column value="{!obj.description}" headerValue="Description"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

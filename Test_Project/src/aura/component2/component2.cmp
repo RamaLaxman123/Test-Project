@@ -1,0 +1,7 @@
+<aura:component >
+	<div>
+        Company : ET Marlabs <br/><br/>
+    	Location : Bangalore <br/><br/>
+        State : Karnataka <br/>
+    </div>
+</aura:component>

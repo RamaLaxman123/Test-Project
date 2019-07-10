@@ -1,0 +1,36 @@
+<apex:page controller="CTI_Controller" showHeader="false" sidebar="false">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="aname" value="Account Name"></apex:outputLabel>
+                <apex:outputText value="{!accName}" id="aname"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="aphone" value="Account Phone"></apex:outputLabel>
+                <apex:outputText value="{!accPhone}" id="aphone"/>
+            </apex:pageBlockSectionItem>            
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel for="aid" value="Account Id"></apex:outputLabel>
+                <apex:outputText value="{!accId}" id="aid"/>
+            </apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel for="uid" value="User Id"></apex:outputLabel>
+                <apex:outputText value="{!userId}" id="uid"/>
+            </apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel for="uname" value="User Name"></apex:outputLabel>
+                <apex:outputText value="{!userName}" id="uname"/>
+            </apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel for="ufirstname" value="User First Name"></apex:outputLabel>
+                <apex:outputText value="{!userFirstName}" id="ufirstname"/>
+            </apex:pageBlockSectionItem>
+			<apex:pageBlockSectionItem >
+                <apex:outputLabel for="ulastname" value="User Last Name"></apex:outputLabel>
+                <apex:outputText value="{!userLastName}" id="ulastname"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+ </apex:form>
+</apex:page>

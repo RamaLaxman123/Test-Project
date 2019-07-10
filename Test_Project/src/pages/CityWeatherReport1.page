@@ -1,0 +1,6 @@
+<apex:page >
+    <apex:pageBlock >        
+        
+        <apex:include pageName="CityWeatherReport"/>
+    </apex:pageBlock>
+</apex:page>
